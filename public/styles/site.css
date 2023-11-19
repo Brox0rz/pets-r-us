@@ -100,11 +100,11 @@ nav a:hover {
 
 
   .image-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 5px;
+    margin: auto
   }
   .image-container img {
+    display: block;
+    width: 50%;
     margin-right: 5%;
     margin-left: 5%
   }
