@@ -22,6 +22,14 @@ app.get('/grooming', (req, res) => {
   res.render('grooming'); // Renders views/grooming.ejs
 });
 
+app.get('/training', (req, res) => {
+  res.render('training'); // Renders views/training.ejs
+});
+
+app.get('/boarding', (req, res) => {
+  res.render('boarding'); // Renders views/boarding.ejs
+});
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, function() {
