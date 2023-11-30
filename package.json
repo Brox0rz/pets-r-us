@@ -1,0 +1,28 @@
+{
+  "name": "pets-r-us",
+  "version": "1.0.0",
+  "description": "* Brock Hemsouvanh",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brox0rz/pets-r-us.git"
+  },
+  "author": "Brock Hemsouvanh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Brox0rz/pets-r-us/issues"
+  },
+  "homepage": "https://github.com/Brox0rz/pets-r-us#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.1"
+  }
+}
