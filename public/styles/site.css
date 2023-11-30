@@ -3,25 +3,8 @@ body {
   font-family: 'Lato', sans-serif;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
-  background: radial-gradient(circle at center, lightgreen, darkgreen);
-  
-}
-
-.centered-image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.lightgreen {
-  font-family: 'Lato', sans-serif;
-  font-family: 'Nunito', sans-serif;
-  font-size: 20px;
-  background-color: lightgreen;
-  padding: 20px; 
-  margin: 20px 20px 50px 20px;
-  box-shadow: 0px 1px 13px 3px rgba(0, 0, 0, 0.288);
-  border-radius: 45px;
+  background: #3d6646;
+  margin: 0;
 }
 
 p {
@@ -30,24 +13,11 @@ p {
   line-height: 1.4em;
 }
 
-h1 {
-  font-family: 'Lato', sans-serif;
-  padding-top: 20px;
-  color: rgb(245, 235, 0);
-  text-shadow: 2px 2px 4px rgb(44, 29, 0);
-}
-
-
-h2 {
-  font-family: 'Lato', sans-serif;
-}
-
 header {
-  background: #4ba84b;
+  background: #6a62dc;
   height: 60px;
   line-height: 60px;
   box-shadow: 0px 1px 13px 3px rgba(0, 0, 0, 0.288);
-  margin:35px;
 }
 
 nav ul {
@@ -64,14 +34,14 @@ nav li {
 }
 
 nav a {
-  color: #fff;
+  color: gold;
   text-decoration: none;
   font-size: 1.2em;
 }
 
 nav a:hover {
-  color: #000;
-  background: #fff;
+  color: gold;
+  background: #80a579;
   padding: 6px 10px;
   border-radius: 5px;
   box-shadow: 0px 1px 13px 3px rgba(0, 0, 0, 0.384);
@@ -84,6 +54,10 @@ nav a:hover {
     word-spacing: 0.5em;
     margin: 0;
     text-align: center;
+    font-family: 'Lato', sans-serif;
+    padding-top: 20px;
+    color: gold;
+    text-shadow: 2px 2px 4px rgb(44, 29, 0);
   }
   
   h2 {
@@ -92,10 +66,9 @@ nav a:hover {
     word-spacing: 0.2em;
     margin: 0;
     text-align: center;
-    padding-top: 15px;
-    padding-bottom:15px;
-    color: rgb(245, 235, 0);
+    color: #80a579;
     text-shadow: 2px 2px 4px rgb(44, 29, 0);
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -136,8 +109,14 @@ nav a:hover {
   .intro {
     font-weight: bold;
     text-align: center;
-    background-color: yellowgreen
+    background-color: #80a579; /* Fallback color */
+    box-shadow: inset 0 0 3em #3d6646; /* Soft shadow inset applied equally on all sides */
+    margin: 1em;
+    padding: 2em; /* Padding to allow the shadow to be visible inside the element */
+    border-radius: 3em; /* Rounds the corners */
   }
+  
+
   #h3{
     text-align: center;
   }
@@ -155,7 +134,7 @@ nav a:hover {
 }
 
 footer {
-  background-color: darkgreen;
+  background-color: #80a579;
   color: white;
   text-align: center;
   padding: 20px;
@@ -164,4 +143,14 @@ footer {
 .footer-quote {
   font-style: italic;
   font-size: 1.2em;
+}
+
+.home-pic {
+  background-image: 
+    linear-gradient(to bottom, #3d6646 0%, rgba(0,100,0,0) 10%, rgba(0,100,0,0) 90%, #3d6646 100%),
+    url('/images/bbcat-pond.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  width: 100%;
 }
