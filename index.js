@@ -58,6 +58,15 @@ app.post('/register', (req, res) => {
         });
 });
 
+app.post('/send-message', (req, res) => {
+    const { email, message } = req.body;
+
+    console.log(`Received message from ${email}: ${message}`);
+
+    res.redirect('/');
+});
+
+
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT: ' + PORT);
     console.log('\n  Press Ctrl+C to stop the server...');
