@@ -14,12 +14,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Pets-R-Us</title>
 </head>
-<body>
+    <body>
 
     <%- include('partials/header') %>
+        <div class="upper-section">
+            <h1>Welcome to Pets-R-Us</h1><br><hr>
+            <h2>where every animal basks in the warmth of companionship and the essence of dignified care.</h2>
+        </div>
 
-    <h1>Welcome to Pets-R-Us,</h1><br>
-    <h2>where every animal basks in the warmth of companionship and the essence of dignified care.</h2>
     <div class="home-pic"></div>
 
     <p class="intro"> Here, we don't just see animals as pets; we see them as cherished friends, as beings of this Earth with whom we share our days and our homes. 
@@ -32,15 +34,66 @@
         Our philosophy is simple yet profound: to provide a sanctuary that mirrors the luxury of a spa and the comfort of a loving home. 
         From the gentle touch in our grooming sessions to the encouraging words in our training areas, every service we offer is infused with compassion 
         and tailored for the wellbeing of our animal companions. The type of business we operate is different than any other you might find. 
-        While there are expenses and the exchange of currency for services, we stand against the commoditization of animals, against seeing them as 
+        While there are expenses and the exchange of currency for services, we stand against the commodification of animals, against seeing them as 
         mere numbers or revenue streams. Instead, we celebrate their uniqueness, their personalities, and their right to a joyful and enriched life. 
         At Pets-R-Us, you'll find no unnecessary pens or cages to confine spirits meant to soar; here, playtime and pampering are not scheduled activities, 
         but a way of life.
         <br><br>
         Join us, and let's honor the bond between humans and animals with a promise of lifelong care and mutual respect, creating not just a home, but a legacy of love.</p>
     </p>
+        <div class="lower-section">
+            <div class="locations">
+                <h2>Our Locations</h2>
+                <p>1. Sunshine Valley - 123 Pet Street, Happytown</p>
+                <p>2. Seaside Haven - 456 Ocean View Ave, Beachcity</p>
+
+                <h2>Location Hours</h2>
+                <p>Sunshine Valley: Mon-Sun 9am-7pm</p>
+                <p>Seaside Haven: Mon-Sun 8am-8pm</p>
+            </div>
+
+            <div class="guest-of-the-week">
+                <h2>Guest of the Week</h2>
+                <img src="/images/thanos.jpg" alt="Guest of the Week">
+                <p>Meet Thanos! He's a lovable big boi who employs subtle hints to get pets!</p>
+            </div>
+
+            <div class="testimonials">
+                <h2>What Our Clients Say</h2>
+                <p>"The best grooming experience for my Max! He came back so happy!" - Jane Doe</p>
+                <p>"Professional and caring staff. Highly recommend!" - John Smith</p>
+            </div>
+
+            <div class="contact-form">
+                <div class="card center-div">
+                    <div class="card-title">
+                        <h2>Contact Us</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="form">
+                            <form action="/send-message" method="post">
+                                <div class="form-field">
+                                    <label for="email">Email Address</label><br />
+                                    <input class="input" type="email" name="email" id="email" placeholder="Enter your email address here" required autofocus>
+                                </div>
+            
+                                <div class="form-field">
+                                    <label for="message">Your Message</label><br />
+                                    <textarea class="input" name="message" id="message" rows="4" placeholder="Enter your message here" required></textarea>
+                                </div>
+            
+                                <div class="form-field">
+                                    <input type="submit" value="Submit" class="btn btn-primary full-width">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     
     <%- include('partials/footer') %>
     
-</body>
+    </body>
 </html>

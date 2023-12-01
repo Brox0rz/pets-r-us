@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <!-- 
+    File: training.ejs
     Author: Brock Hemsouvanh
-    Date: 11/14/23
-    File Description:
-    This file provides the training page structure for the Pets-R-Us website.
+    Date: 11/30/23
+    File Description: This file provides the training page structure for the Pets-R-Us website.
 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,12 +18,70 @@
         
       </header>
     <%- include('partials/header') %>
-
-    <h2>Welcome to the Pets-R-Us Training Page!</h2>
-    <p>This is the page where you can find all about our pet training services.</p>
-    <div class="image-container">
-        <img src="/images/meme-garden-guardian.jpg" alt="Meme was trained to do the garden a heckin' protec.">
+    
+<div class="upper-section">
+    <h1>Training Services</h1><br><hr>
+    <h2>structured education and guidance with respect.</h2>
+</div>
+    <div class="mid-section">
+        <div class="training-content">
+            <div class="training-image">
+                <img src="/images/meme-garden-guardian.jpg" alt="Meme was trained to do the garden a heckin' protec.">
+            </div>
+        <p class="intro">
+            At Pets-R-Us, our training philosophy is deeply rooted in compassion and respect, aligning with our vegan principles. 
+            We understand that effective training is not about dominance, but about mutual understanding and trust. Our training 
+            sessions are designed to be positive and rewarding experiences for both pets and their guardians. We use gentle, 
+            reward-based methods, focusing on positive reinforcement rather than punishment. This approach not only builds a 
+            strong bond between pets and their guardians but also encourages a lifelong love for learning.
+            <br><br>
+            Our trainers are experts in animal behavior, skilled in identifying and nurturing the individual needs and personalities 
+            of each pet. They work closely with guardians to create personalized training plans, ensuring that each session is 
+            tailored to the pet's unique temperament and learning pace.
+            <br><br>
+            The training environment at Pets-R-Us is safe, serene, and stimulating. We provide a variety of interactive toys 
+            and training tools to keep sessions engaging and fun. By creating a stress-free atmosphere, we ensure that learning 
+            becomes a joyful journey for our animal guests. Join us at Pets-R-Us for a training experience that honors the spirit 
+            and individuality of your pet, fostering a deep, empathetic connection and a harmonious way of living together.
+            </p>
+        </div>
     </div>
-    <%- include('partials/footer') %>
+
+
+<!-- the follow div was authored by Professor Richard Krasso --> 
+<div class="grid">
+
+    <div class="card">
+        <div class="card-title"></div>
+        <div class="card-content">
+            <ul>
+                <li class="p-10">
+                    Puppy Training Program: Building Foundations: $50/hr
+                </li>
+                <li class="p-10">
+                    Adolescent Dog Training: Understanding Changes: $60/hr
+                </li>
+                <li class="p-10">
+                    Adult Dog Training: Advanced Skills and Behaviors: $75/hr
+                </li>
+                <li class="p-10">
+                    Specialized Training: Customized for Unique Needs: $75/hr
+                </li>
+                <li class="p-10">
+                    Group Training Sessions: Socialization and Learning: $100/hr
+                </li>
+                <li class="p-10">
+                    Species-Specific Training: Personalized Attention: $150/hr
+                </li>
+                <li class="p-10">
+                    Behavior Modification: Positive Reinforcement Techniques: $150/hr
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
 </body>
 </html>

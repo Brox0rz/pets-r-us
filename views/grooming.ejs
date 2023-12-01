@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <!-- 
+    File: grooming.ejs
     Author: Brock Hemsouvanh
-    Date: 11/11/23
-    File Description:
-    This file provides the grooming page structure for the Pets-R-Us website.
--->
+    Updated: 11/30/23
+    File Description: This file provides the grooming page structure for the Pets-R-Us website.
+    -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/site.css">
@@ -15,16 +16,67 @@
     <title>Pets-R-Us</title>
 </head>
 <body>
-        
-      </header>
     <%- include('partials/header') %>
+    <div class="upper-section">
+        <h1>Grooming Services</h1><br><hr>
+        <h2>a spa-like experience to provide pampered comfort, relaxation, and safety</h2>
+    </div>
 
-    <h2>Welcome to the Pets-R-Us Grooming Page!</h2>
-    <p>This is the page where you can find all about our pet grooming services.</p>
+    <div class="mid-section">
+        <div class="grooming-content">
+            <div class="grooming-image">
+                <img src="/images/kit-groom.jpg" alt="Grooming Kit">
+            </div>
+        <p class="intro">
+            At Pets-R-Us Grooming, we recognize the unique personality and needs of each animal. Our team, skilled in animal care, 
+            is deeply empathetic, cherishing and respecting every guest. Trust and rapport form the cornerstone of our grooming 
+            approach. We prioritize understanding each animal's preferences and quirks, transforming grooming into a session 
+            filled with care, love, and personalized attention.
+            <br><br>
+            We know new environments can be daunting for animals, filled with unfamiliar sights, sounds, and smells. To help ease 
+            this, we provide a guided tour of our facilities, allowing guests to become familiar with their surroundings and, 
+            if suitable, meet fellow animal guests. This approach aims to create a relaxed and secure atmosphere, setting a 
+            positive tone for their grooming experience.
+            <br><br>
+            The safety and comfort of our animal guests are our top priorities. We encourage guardians to join the initial tour, 
+            fostering a sense of security and familiarity. Our goal is to ensure that every guest feels relaxed and content, 
+            making their grooming sessions moments of serene enjoyment. At Pets-R-Us, grooming transcends service—it's an 
+            experience where dignity, care, and a homelike environment are guaranteed.
+            </p>
+        </div>
+    </div>
 
-<div class="image-container">
-    <img src="/images/kit-groom.jpg" alt="Grooming Kit">
-</div>
+
+    <!-- the follow div was authored by Professor Richard Krasso --> 
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-title"></div>
+            <div class="card-content">
+                <ul>
+                    <li class="p-10">
+                        Expert Cut and Trim: $50
+                    </li>
+                    <li class="p-10">
+                        Luxurious Bathing Experience: $40
+                    </li>
+                    <li class="p-10">
+                        Special Styling and Hair Dyeing: $90
+                    </li>
+                    <li class="p-10">
+                        Custom Accessories: $20
+                    </li>
+                    <li class="p-10">
+                        Nail Trimming and Paw Care: $30
+                    </li>
+                    <li class="p-10">
+                        Gentle Ear Cleaning: $25
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
 
     <%- include('partials/footer') %>
 </body>
