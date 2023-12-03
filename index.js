@@ -17,7 +17,7 @@ const app = express();
 const CONN = 'mongodb+srv://web340_admin:204L0bJE7sJJjbQQ@cluster0.1eekj05.mongodb.net/?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect(CONN).then(() => {  // This section authored by Professor Richard Krasso
+mongoose.connect(CONN, {dbName: "petsDB"}).then(() => {  // This section authored by Professor Richard Krasso
   console.log('Connection to MongoDB database was successful\n  If you see this message it means you were able to connect to your MongoDB Atlas cluster');
 }).catch(err => {
     console.log('MongoDB Error: ' + err.message);
