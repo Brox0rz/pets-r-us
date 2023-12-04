@@ -1,0 +1,59 @@
+<!-- 
+    File: customer-list.ejs
+    Author: Brock Hemsouvanh
+    Date: 12/3/23
+    File Description: Page to display the list of customers who've registered. The list is pulled from a MongoDB via 
+    Mongoose dependency.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/site.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,400&family=Nunito:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pets-R-Us</title>
+</head>
+<body>
+<%- include('partials/header.ejs') %>
+
+<!-- following section originally authored by Professor Richard Krasso. Source: https://github.com/buwebdev/web-340/blob/master/week-7/fms/views/fruit-list.ejs-->
+<section class="container">
+  <div class="card center-div">
+      <div class="card-title">
+          Customer List
+      </div>
+
+      <div class="card-content">
+          <% if(customers.length > 0) { %>
+          <table class="table">
+              <tr>
+                  <th>Customer ID</th>
+                  <th>Email</th>
+              </tr>
+              <tbody>
+              <% customers.forEach(function(customer) { %>
+              <tr>
+                  <td>
+                      <%= customer.id %> <!-- Replace with actual property names -->
+                  </td>
+                  <td>
+                      <%= customer.email %> <!-- Replace with actual property names -->
+                  </td>
+              </tr>
+              <% }) %>
+              </tbody>
+          </table>
+          <% } else { %>
+          <h3>No customers have been added to the database. Add some to see them here!</h3>
+          <% } %>
+      </div>
+  </div>
+</section>
+
+<%- include('partials/footer.ejs') %>
+
+</body>
+</html>
+
