@@ -47,6 +47,16 @@ app.get('/register', (req, res) => {
     res.render('register');
 });
 
+app.get('/customer-list', (req, res) => {
+    Customer.find({}).then(customers => {
+        res.render('customer-list', { customers: customers });
+    }).catch(err => {  // had to look up the newer way to use the find function for updated version of Mongoose
+        console.error(err);
+        res.status(500).send('Error occurred while fetching customers');
+    });
+});
+
+
 app.post('/register', (req, res) => {
     const { customerId, email } = req.body;
 
