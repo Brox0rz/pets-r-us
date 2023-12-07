@@ -27,6 +27,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
+const fs = require('fs');
+const path = require('path');
+
+const Appointment = require('./models/appointment');
+
+
 app.get('/', (req, res) => {
     res.render('index'); // Renders views/index.ejs
 });
@@ -46,6 +52,58 @@ app.get('/boarding', (req, res) => {
 app.get('/register', (req, res) => {
     res.render('register');
 });
+
+app.get('/appointment', (req, res) => {
+    const servicesFilePath = path.join(__dirname, 'public', 'data', 'services.json');
+    
+    fs.readFile(servicesFilePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Error reading services file');
+        }
+        const services = JSON.parse(data);
+        res.render('appointment', { services: services });
+    });
+});
+
+app.post('/appointment', (req, res) => {
+    const { firstName, lastName, email, service } = req.body;
+
+    const newAppointment = new Appointment({
+        userName: firstName + lastName, 
+        firstName,
+        lastName,
+        email,
+        service
+    });
+
+    newAppointment.save()
+        .then(() => res.redirect('/'))
+        .catch(err => {
+            console.error(err);
+            res.status(500).send('Error occurred while saving appointment');
+        });
+});
+
+app.get('/appointment', (req, res) => {
+    // Define the path to the services.json file
+    const servicesFilePath = path.join(__dirname, 'public', 'data', 'services.json');
+
+    // Read the services.json file
+    fs.readFile(servicesFilePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Error reading services file');
+        }
+
+        // Parse the JSON data
+        const services = JSON.parse(data);
+
+        // Render the appointment page and pass the services data to it
+        res.render('appointment', { services: services });
+    });
+});
+
 
 app.get('/customer-list', (req, res) => {
     Customer.find({}).then(customers => {
