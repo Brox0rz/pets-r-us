@@ -357,3 +357,24 @@ input[type=text], input[type=email], input[type=submit] {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.guest-of-the-week img {
+  width: 800px;
+  height: auto; /* Maintain the aspect ratio */
+  border: 3px solid #DBD57D;
+  margin: 10px 0;
+}
+
+.boarding-image img {
+  width: 400px;
+  height: auto;
+  border: 3px solid #DBD57D;
+  margin: 10px 0;
+}
+
+.training-image img {
+  width: 500px;
+  height: auto;
+  border: 3px solid #DBD57D;
+  margin: 10px 0;
+}
