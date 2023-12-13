@@ -126,6 +126,21 @@ app.post('/register', (req, res) => {
         });
 });
 
+app.get('/my-appointments', (req, res) => {
+    res.render('my-appointments');
+});
+
+app.get('/api/appointments/:email', async (req, res) => {
+    try {
+      const email = req.params.email;
+      const appointments = await Appointment.find({ email: email });
+      res.json(appointments);
+    } catch (err) {
+      console.error(err);
+      res.status(500).send('Error occurred while fetching appointments');
+    }
+  });
+
 app.post('/send-message', (req, res) => {
     const { email, message } = req.body;
 
@@ -133,7 +148,6 @@ app.post('/send-message', (req, res) => {
 
     res.redirect('/');
 });
-
 
 app.listen(PORT, () => {
     console.log('Application started and listening on PORT: ' + PORT);
