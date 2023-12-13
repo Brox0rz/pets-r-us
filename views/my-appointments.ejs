@@ -1,0 +1,60 @@
+<!-- 
+    File: my-appointments.ejs
+    Author: Brock Hemsouvanh
+    Date: 12/13/23
+    File Description: Page to display the appointments a customer has made. Uses a Node.js API. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/site.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,400&family=Nunito:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pets-R-Us</title>
+</head>
+<body>
+  <%- include('partials/header.ejs') %>
+
+  <section class="container">
+    <div class="card center-div">
+        <div class="card-title">
+            My Appointments
+        </div>
+  
+        <!-- Add a form for email input -->
+        <form id="appointmentLookupForm">
+            <input type="email" id="emailInput" placeholder="Enter your email address" required>
+            <button type="button" onclick="lookupAppointments()">Lookup Appointments</button>
+        </form>
+  
+        <!-- Div where appointment data will be displayed -->
+        <div id="appointmentResults"></div>
+  
+        <!-- Add a script to handle the onclick event and fetch API call -->
+        <script>
+          function lookupAppointments() {
+            const email = document.getElementById('emailInput').value;
+            fetch('/api/appointments/' + email)
+              .then(response => response.json())
+              .then(data => {
+                let appointmentsHTML = "";
+                data.forEach(function(appointment) {
+                  appointmentsHTML += "<div>" + appointment.service + " - " + appointment.date + "</div>";
+                });
+                document.getElementById('appointmentResults').innerHTML = appointmentsHTML;
+              })
+              .catch(error => console.error('Error:', error));
+          }
+        </script>
+    </div>
+  </section>
+  
+  <%- include('partials/footer.ejs') %>
+  
+
+</body>
+</html>
+
