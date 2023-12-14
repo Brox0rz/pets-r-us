@@ -67,14 +67,19 @@ app.get('/appointment', (req, res) => {
 });
 
 app.post('/appointment', (req, res) => {
-    const { firstName, lastName, email, service } = req.body;
+    const { firstName, lastName, email, service, date, appointmentTime } = req.body;
+
+    let appointmentDateTime = date;
+    if (appointmentTime) {
+        appointmentDateTime = new Date(`${date}T${appointmentTime}`);
+    }
 
     const newAppointment = new Appointment({
-        userName: firstName + lastName, 
         firstName,
         lastName,
         email,
-        service
+        service,
+        date: appointmentDateTime // Store the combined date and time
     });
 
     newAppointment.save()
@@ -133,13 +138,16 @@ app.get('/my-appointments', (req, res) => {
 app.get('/api/appointments/:email', async (req, res) => {
     try {
       const email = req.params.email;
-      const appointments = await Appointment.find({ email: email });
+      let appointments = await Appointment.find({ email: email });
+  
       res.json(appointments);
     } catch (err) {
       console.error(err);
       res.status(500).send('Error occurred while fetching appointments');
     }
   });
+  
+
 
 app.post('/send-message', (req, res) => {
     const { email, message } = req.body;

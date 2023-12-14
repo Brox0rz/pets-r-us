@@ -51,6 +51,17 @@
                   </div>
 
                   <div class="form-field">
+                    <label for="appointmentDate">Appointment Date</label><br />
+                    <input class="input" type="date" name="date" id="date" required min="<%= new Date().toISOString().split('T')[0] %>">
+                  </div>
+                  
+                  <div class="form-field">
+                    <label for="appointmentTime">Appointment Time</label><br />
+                    <input class="input" type="time" name="appointmentTime" id="appointmentTime" required>
+                  </div>
+                  
+
+                  <div class="form-field">
                       <input type="submit" value="Book Appointment" class="btn btn-primary full-width">
                   </div>
               </form>

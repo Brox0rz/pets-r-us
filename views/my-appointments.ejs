@@ -21,7 +21,7 @@
   <section class="container">
     <div class="card center-div">
         <div class="card-title">
-            My Appointments
+            <h3>My Appointments</h3>
         </div>
   
         <!-- Add a form for email input -->
@@ -33,22 +33,25 @@
         <!-- Div where appointment data will be displayed -->
         <div id="appointmentResults"></div>
   
-        <!-- Add a script to handle the onclick event and fetch API call -->
         <script>
           function lookupAppointments() {
             const email = document.getElementById('emailInput').value;
             fetch('/api/appointments/' + email)
               .then(response => response.json())
               .then(data => {
-                let appointmentsHTML = "";
+                let appointmentsHTML = "<table class='table'>";
+                appointmentsHTML += "<tr><th>Service</th><th>Date</th></tr>";
                 data.forEach(function(appointment) {
-                  appointmentsHTML += "<div>" + appointment.service + " - " + appointment.date + "</div>";
+                  appointmentsHTML += `<tr><td>${appointment.service}</td><td>${appointment.date}</td></tr>`;
                 });
+                appointmentsHTML += "</table>";
                 document.getElementById('appointmentResults').innerHTML = appointmentsHTML;
               })
               .catch(error => console.error('Error:', error));
           }
         </script>
+        
+        
     </div>
   </section>
   

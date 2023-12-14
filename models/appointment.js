@@ -12,11 +12,11 @@ appointment booking input on the Pets-R-Us website.
 const mongoose = require('mongoose');
 
 const appointmentSchema = new mongoose.Schema({
-    userName: String,
     firstName: String,
     lastName: String,
     email: String,
-    service: String
+    service: String,
+    date: Date
 });
 
 module.exports = mongoose.model('Appointment', appointmentSchema);
