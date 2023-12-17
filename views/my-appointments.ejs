@@ -21,16 +21,19 @@
   <section class="container">
     <div class="card center-div">
         <div class="card-title">
-            <h3>My Appointments</h3>
+            <h2>My Appointments</h2>
         </div>
   
-        <!-- Add a form for email input -->
-        <form id="appointmentLookupForm">
-            <input type="email" id="emailInput" placeholder="Enter your email address" required>
-            <button type="button" onclick="lookupAppointments()">Lookup Appointments</button>
+        <form action="/lookup-appointments" method="post" class="form">
+          <div class="form-field">
+            <label for="email">Email Address</label><br />
+            <input class="input" type="email" name="email" id="emailInput" placeholder="Enter your email address" required>
+          </div>
+          <div class="form-field">
+            <button type="button" class="btn btn-primary full-width" onclick="lookupAppointments()">Look Up Appointments</button>
+          </div>
         </form>
   
-        <!-- Div where appointment data will be displayed -->
         <div id="appointmentResults"></div>
   
         <script>

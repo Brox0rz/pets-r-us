@@ -1,3 +1,15 @@
 <footer>
-    <p class="footer-quote" tabindex="0"><span aria-hidden="true">🌎</span> Thank you for visiting! <span aria-hidden="true">🐾</span></p>
-  </footer>
+
+  <div class="footer-left">
+    <p>Pets-R-Us ©<span id="year"></span> All Rights Reserved</p>
+  </div>
+
+  <div class="footer-center">
+    <p class="footer-quote" tabindex="0"><span aria-hidden="true">🌎</span>
+        Thank you for visiting! <span aria-hidden="true">🐾</span></p>
+  </div>
+    
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>     
+</footer>

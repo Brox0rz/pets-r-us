@@ -2,7 +2,7 @@
     File: appointment.ejs
     Author: Brock Hemsouvanh
     Date: 12/6/23
-    File Description: This file provides the appointment page structure for the Pets-R-Us website.
+    File Description: This file provides the appointment/booking page structure for the Pets-R-Us website.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@
   <h1 class="center-text">Book an Appointment</h1>
 
   <div class="card center-div">
-      <div class="card-title"><h3>Appointment Details</h3></div>
+      <div class="card-title"><h2>Appointment Details</h2></div>
       <div class="card-content">
           <div class="form">
               <form action="/appointment" method="post">
@@ -55,12 +55,6 @@
                     <input class="input" type="date" name="date" id="date" required min="<%= new Date().toISOString().split('T')[0] %>">
                   </div>
                   
-                  <div class="form-field">
-                    <label for="appointmentTime">Appointment Time</label><br />
-                    <input class="input" type="time" name="appointmentTime" id="appointmentTime" required>
-                  </div>
-                  
-
                   <div class="form-field">
                       <input type="submit" value="Book Appointment" class="btn btn-primary full-width">
                   </div>

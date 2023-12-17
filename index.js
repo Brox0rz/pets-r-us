@@ -67,19 +67,14 @@ app.get('/appointment', (req, res) => {
 });
 
 app.post('/appointment', (req, res) => {
-    const { firstName, lastName, email, service, date, appointmentTime } = req.body;
-
-    let appointmentDateTime = date;
-    if (appointmentTime) {
-        appointmentDateTime = new Date(`${date}T${appointmentTime}`);
-    }
+    const { firstName, lastName, email, service, date } = req.body;
 
     const newAppointment = new Appointment({
         firstName,
         lastName,
         email,
         service,
-        date: appointmentDateTime // Store the combined date and time
+        date
     });
 
     newAppointment.save()
