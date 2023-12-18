@@ -16,7 +16,7 @@ const appointmentSchema = new mongoose.Schema({
     lastName: String,
     email: String,
     service: String,
-    date: Date
+    date: String
 });
 
 module.exports = mongoose.model('Appointment', appointmentSchema);

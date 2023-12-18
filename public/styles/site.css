@@ -7,6 +7,8 @@
 
 html,
 body {
+  font-family: 'Passion One', cursive;
+  font-family: 'Russo One', sans-serif;
   font-family: 'Lato', sans-serif;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
@@ -17,7 +19,8 @@ body {
 }
   
 .container {
-    flex: 1; /* push the footer down */
+  margin-top: 35px;
+  flex: 1; /* push the footer down */
 }
 
 
@@ -114,19 +117,31 @@ nav a:hover {
 }
   
   h1 {
+    font-family: 'Passion One', cursive;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 4em;
     word-spacing: 0.5em;
     margin: 0;
     text-align: center;
-    font-family: 'Lato', sans-serif;
     padding-top: 20px;
     color: #B97EDC;
     text-shadow: 2px 2px 10px rgb(44, 29, 0);
   }
   
   h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    word-spacing: 0.5em;
+    margin: 0;
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    padding-top: 20px;
+    color: #5a4b8e;
+    text-shadow: 2px 2px 10px #B97EDC;
+  }
+
+  h3 {
     font-weight: 500;
     font-size: 2.441em;
     word-spacing: 0.2em;
@@ -137,21 +152,19 @@ nav a:hover {
     font-family: 'Lato', sans-serif;
 }
 
-h3 {
-  text-transform: uppercase;
-  font-size: 2em;
-  word-spacing: 0.5em;
-  margin: 0;
-  text-align: center;
-  font-family: 'Lato', sans-serif;
-  padding-top: 20px;
-  color: #5a4b8e;
+h4 {
+  font-family: 'Nunito', sans-serif;
+  color: #26422c;
   text-shadow: 2px 2px 10px #B97EDC;
+  font-size: 4em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
   .image-container {
     margin: auto
   }
+
   .image-container img {
     display: block;
     width: 50%;
@@ -193,23 +206,6 @@ h3 {
     padding: 2em; /* Padding to allow the shadow to be visible inside the element */
     border-radius: 3em;
   }
-  
-
-  #h3{
-    text-align: center;
-  }
-  .hobbies-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.hobby {
-    flex: 0 0 25%;
-    box-sizing: border-box;
-    margin: 15px;
-    text-align: center;
-}
 
 .home-pic {
   background-image: 
@@ -226,15 +222,15 @@ h3 {
   border-radius: 15px; /* Curved corners */
   box-shadow: 0 0 12px 12px #DBD57D;
   padding: 20px; 
-  max-width: 50%; 
+  max-width: 70%; 
   margin: 4em auto; 
   text-align: center; 
+  overflow: auto;
 }
 
 .card-title {
-  font-size: 1.5em; 
-  color: #B97EDC; 
-  margin-bottom: 1em; 
+  font-size: 1em; 
+  color: #B97EDC;  
 }
 
 .card-content {
@@ -371,7 +367,8 @@ input[type=text], input[type=email], input[type=submit] {
   background-color: #26422c; 
   padding: 20px; 
   color: white; 
-  background-image: radial-gradient(circle at center, #26422c 0%, #26422c 50%, #5a4b8e 100%);
+  background-image: linear-gradient(to bottom, #5a4b8e 0%, rgba(0,100,0,0) 10%, rgba(0,100,0,0) 90%, #26422c 100%);
+  color: white;
 }
 
 .lower-section {
@@ -421,8 +418,10 @@ input[type=text], input[type=email], input[type=submit] {
 }
 
 .table {
-  width: 80%;
+  width: 90%;
+  max-width: 100%;
   border-collapse: collapse;
+  font-size: medium;
   margin: auto;
 }
 
@@ -468,29 +467,52 @@ input[type=text], input[type=email], input[type=submit] {
 
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
     align-items: center;
+    grid-gap: 2px; /* Optional: if you want to keep some space between items */
   }
 
   nav li {
-    margin-bottom: 5px;
+    margin-bottom: 0; /* Reset the bottom margin */
+    background-color: #26422c; /* Background color of each list item */
+    border: 1px solid #DBD57D; /* Set border with style */
   }
 
   nav a {
     font-size: 0.8em;
+    display:block;
   }
 
   .guest-of-the-week img {
     max-width: 80%;
   }
 
+  .container {
+    margin-top: 250px;
+  }
+
   .home-pic {
     height: 400px;
   }
 
+  .grooming-content,
+  .boarding-content,
+  .training-content {
+    flex-direction: column;
+  }
+
+  .grooming-image img,
+  .boarding-image img,
+  .training-image img {
+    width: 100%; /* full width */
+    margin: 0; /* reset margins */
+    order: -1; /* kick images to the top */
+  }
+
   /* Adjust upper section heading sizes */
   .upper-section {
-    padding-top: 500px;
+    padding-top: 250px;
   }
 
   .upper-section h1 {
@@ -517,12 +539,23 @@ input[type=text], input[type=email], input[type=submit] {
 
   .table {
     width: 100%;
+    font-size: small;
+  }
+
+  h4 {
+    font-size: 3em;
   }
 }
 
 @media (max-width: 480px) {
   nav a {
     font-size: 0.7em;
+  }
+
+  .card {
+    padding: 10px;
+    margin: 1em;
+    margin-top: 2em;
   }
 
   .guest-of-the-week img {
@@ -533,6 +566,10 @@ input[type=text], input[type=email], input[type=submit] {
     height: 300px;
   }
 
+  .table {
+    font-size: 0.6em;
+  }
+
   /* Adjust upper section heading sizes */
   .upper-section h1 {
     font-size: 2em;
@@ -541,4 +578,9 @@ input[type=text], input[type=email], input[type=submit] {
   .upper-section h2 {
     font-size: 1.2em;
   }
+
+  h4 {
+    font-size: 2.3em;
+  }
+
 }

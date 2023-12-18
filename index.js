@@ -38,15 +38,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/grooming', (req, res) => {
-    res.render('grooming'); // Renders views/grooming.ejs
+    res.render('grooming');
 });
 
 app.get('/training', (req, res) => {
-    res.render('training'); // Renders views/training.ejs
+    res.render('training');
 });
 
 app.get('/boarding', (req, res) => {
-    res.render('boarding'); // Renders views/boarding.ejs
+    res.render('boarding');
 });
 
 app.get('/register', (req, res) => {
